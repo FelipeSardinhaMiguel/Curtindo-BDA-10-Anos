@@ -1,0 +1,8 @@
+-- Para rodar o teste de exemplo e ter os relatórios html --
+(npx playwright test), (npx playwright show-report).
+
+-- O comando é quem cria aquela telinha que permite ver os testes realizados --
+(npx playwright test --ui)
+
+-- Para atualizar o Playwright --
+(npm install -D @playwright/test@latest), (npx playwright install --with-deps), (npx playwright --version)
