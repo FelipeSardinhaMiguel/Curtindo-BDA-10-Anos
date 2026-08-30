@@ -8,4 +8,7 @@
 (npm install -D @playwright/test@latest), (npx playwright install --with-deps), (npx playwright --version)
 
 -- Para instalar o Playwright para python e os navegadores nescessários e rodar o teste--
-(pip install pytest-playwright), (playwright install), (pytest)
+(pip install pytest-playwright), (playwright install)
+
+-- Para rodar todos od testes--
+(pytest)
