@@ -11,6 +11,7 @@ def test_has_title(page: Page):
 def test_get_started_link(page: Page):
     page.goto("https://playwright.dev/")
 
+    #para clicr no link com o nome "Get started".
     page.get_by_role("link", name="Get started").click()
 
     expect(page.get_by_role("heading", name="Installation")).to_be_visible()
