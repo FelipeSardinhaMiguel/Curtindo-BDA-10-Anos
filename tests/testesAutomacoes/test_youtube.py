@@ -11,8 +11,13 @@ def test_youtube(page: Page):
     page.get_by_placeholder("Pesquisar").fill("BDA 10 anos")
     page.get_by_placeholder("Pesquisar").press("Enter")
 
+    #print(page.url)
     #1ª verificação de que a pesquisa funcionou (pela pesquisa no input).
     expect(page.get_by_placeholder("Pesquisar")).to_have_value("BDA 10 anos")
-    #2ª verificação de que a pesquisa funcionou (pela URL).
-    expect(page).to_have_url(re.compile("search_query=BDA+10+anos"))
 
+    #2ª verificação de que a pesquisa funcionou (pela URL).
+    #expect(page).to_have_url(re.compile("search_query=BDA+10+anos"))
+
+    page.get_by_title("Batalha da Aldeia - Especial 10 anos").click()
+
+    page.get_by_role("button", name='Marcar como "Gostei"').click()

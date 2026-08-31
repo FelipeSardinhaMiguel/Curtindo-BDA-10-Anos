@@ -10,5 +10,5 @@
 -- Para instalar o Playwright para python e os navegadores nescessários e rodar o teste--
 (pip install pytest-playwright), (playwright install)
 
--- Para rodar todos os testes; Para rodar com a janela aberta (por padrão é o Chromium)--
-(pytest), (pytest --headed)
+-- Para rodar todos os testes; Para rodar com a janela aberta (por padrão é o Chromium); Para printar algo junto ao teste--
+(pytest), (pytest --headed), (pytest --headed -s)
