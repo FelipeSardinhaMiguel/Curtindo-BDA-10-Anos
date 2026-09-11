@@ -20,4 +20,7 @@ def test_youtube(page: Page):
 
     page.get_by_title("Batalha da Aldeia - Especial 10 anos").click()
 
-    page.get_by_role("button", name='Marcar como "Gostei"').click()
+    page.get_by_role("button", name="marcar este vídeo como \"").click()
+
+    #tentar mutar o video quando ele começar.
+    #page.get_by_role("class", name="ytp-mute-button").click()

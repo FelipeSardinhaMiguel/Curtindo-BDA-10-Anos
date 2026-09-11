@@ -7,8 +7,18 @@
 -- Para atualizar o Playwright --
 (npm install -D @playwright/test@latest), (npx playwright install --with-deps), (npx playwright --version)
 
--- Para instalar o Playwright para python e os navegadores nescessários e rodar o teste--
+-- Para instalar o Playwright para python e os navegadores nescessários e rodar o teste --
 (pip install pytest-playwright), (playwright install)
 
--- Para rodar todos os testes; Para rodar com a janela aberta (por padrão é o Chromium); Para printar algo junto ao teste--
+-- Para rodar todos os testes; Para rodar com a janela aberta (por padrão é o Chromium); Para printar algo junto ao teste --
 (pytest), (pytest --headed), (pytest --headed -s)
+
+-- Para abrir o Codegen (Serve para mostrar os elementos de uma pagina) --
+(playwright codegen <URL so site que quer inspecionar>)
+
+-- Para abrir o codegen, caso queira abrir em um site específico adicione a URL no final
+(playwright codegen)
+
+
+-- Autenticação de navegador. Para abrir o codegen no youtube e quando fizer um login, salvar a sessão em auth.json --
+(playwright codegen https://www.youtube.com/ --save-storage=auth.json)
