@@ -22,3 +22,6 @@
 
 -- Autenticação de navegador. Para abrir o codegen no youtube e quando fizer um login, salvar a sessão em auth.json --
 (playwright codegen https://www.youtube.com/ --save-storage=auth.json)
+
+-- Rodar o código da automação --
+(python nomeDaPasta/nomeDoArquivo)

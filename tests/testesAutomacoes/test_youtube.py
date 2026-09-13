@@ -1,9 +1,14 @@
 #importando o playwright api e usando-o como "re", por algum motivo não pode na mesma linha
 import re #isso é do python.
-from playwright.sync_api import Page, expect #isso é do playwright.
+from playwright.sync_api import Page, expect, BrowserContext #isso é do playwright.
 
-def test_youtube(page: Page):
+def test_youtube(browser):
+    context = browser.new_context(storage_state="auth/youtube.json") #A autenticação do youtube.json está no outro arquivo(salvar_sessao.py).
+
+    page = context.new_page()
+
     page.goto("https://www.youtube.com/")
+
 
     expect(page).to_have_title(re.compile("YouTube"))
 
@@ -16,11 +21,11 @@ def test_youtube(page: Page):
     expect(page.get_by_placeholder("Pesquisar")).to_have_value("BDA 10 anos")
 
     #2ª verificação de que a pesquisa funcionou (pela URL).
-    #expect(page).to_have_url(re.compile("search_query=BDA+10+anos"))
+    expect(page).to_have_url(re.compile("search_query=BDA\\+10\\+anos"))
 
-    page.get_by_title("Batalha da Aldeia - Especial 10 anos").click()
+    page.get_by_text("Batalha da Aldeia - Especial 10 anos").first.click()
 
-    page.get_by_role("button", name="marcar este vídeo como \"").click()
+    page.get_by_role("button", name=re.compile("Gostei", re.IGNORECASE)).first.click()
 
     #tentar mutar o video quando ele começar.
-    #page.get_by_role("class", name="ytp-mute-button").click()
+    page.locator(".ytp-mute-button").click()
